@@ -57,7 +57,7 @@ p.add_argument(
 args = p.parse_args()
 
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.INFO,
     format='%(message)s'
 )
 
