@@ -1,0 +1,5 @@
+.DS_Store
+*.gtx
+*.gtx.txt
+test-data/
+transcribed/
