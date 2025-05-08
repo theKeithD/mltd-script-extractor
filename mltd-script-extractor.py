@@ -233,8 +233,9 @@ for i, chap in enumerate(chapters):
         }
         chapter_output['lines'].append(line)
         logging.debug(f'  added line {line["line_id"]} to {chapter_id}!')
+    chapter_output['lines'] = sorted(chapter_output['lines'], key=lambda d: d['line_id'])
 
-    # insert button events into chpater wherever they should be
+    # insert button events into chapter wherever they should be
     #   we use an amended version of the arg1 value to determine what line IDs it should be nestled between
     #   and then scan through the existing (actor_text) event list until we find the right place
     # notable args for select1 events:
@@ -276,6 +277,7 @@ for i, chap in enumerate(chapters):
             chapter_output['lines'].insert(index, line)
         else:
             logging.warning(f'  found no suitable position for button {b["arg1"]}!')
+
 
     all_chapters.append(chapter_output)
     logging.debug('  chapter complete!')
